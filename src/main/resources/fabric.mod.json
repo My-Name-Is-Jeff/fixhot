@@ -3,13 +3,13 @@
 	"id": "fixhot",
 	"version": "${version}",
 	"name": "FixHot",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Provide hotfixes for bugs in CraftMine.",
 	"authors": [
-		"Me!"
+		"My Name Is Jeff"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/My-Name-Is-Jeff/FixHot",
+		"sources": "https://github.com/My-Name-Is-Jeff/FixHot.git"
 	},
 	"license": "LGPL-3.0",
 	"icon": "assets/fixhot/icon.png",
