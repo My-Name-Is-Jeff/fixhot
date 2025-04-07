@@ -2,13 +2,11 @@ package mynameisjeff.fixhot.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ShieldItem;
-import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,12 +24,6 @@ public abstract class ShieldItemMixin extends Item {
         // But then why would they have a starting shield? For the fire shield unlock?
         if (original != InteractionResult.SUCCESS) return original;
 
-        BlocksAttacks blocksAttacks = this.components().get(DataComponents.BLOCKS_ATTACKS);
-        if (blocksAttacks != null) {
-            player.startUsingItem(interactionHand);
-            return InteractionResult.CONSUME;
-        } else {
-            return InteractionResult.PASS;
-        }
+        return super.use(level, player, interactionHand);
     }
 }
